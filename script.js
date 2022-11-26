@@ -18,7 +18,7 @@ function Hero(image, top, left, sizex,sizey) {
         console.log('top: ' + this.top);
     }
     this.moveDown = function () {
-        this.top += 13;
+        this.top += 30;
         console.log('leftdown: ' + this.left);
         console.log('topdown: ' + this.top);
         console.log(hero.sizey);
@@ -28,17 +28,17 @@ function Hero(image, top, left, sizex,sizey) {
         console.log("moveleft:" + this.left);
     }
     this.movetop = function () {
-        this.top -= 13;
+        this.top -= 30;
         console.log('movetop:' + this.top);
     }
 }
 
-let hero = new Hero('kakashi.png', 20, 30, 150,340);
+let hero = new Hero('kakashi.png', 10, 10, 150,340);
 
 function start() {
-    if (hero.left < window.innerWidth - hero.sizex && hero.top <= 20) {
+    if (hero.left < window.innerWidth - hero.sizex && hero.top <= 10) {
         hero.moveRight();
-    } else if (hero.left > window.innerWidth - hero.sizex && hero.top < window.innerHeight - hero.sizey) {
+    } else if (hero.left >= window.innerWidth - hero.sizex && hero.top <= window.innerHeight - hero.sizey) {
         hero.moveDown();
     } else if (hero.top > window.innerHeight - hero.sizey && hero.left > 0) {
         hero.moveLeft();
